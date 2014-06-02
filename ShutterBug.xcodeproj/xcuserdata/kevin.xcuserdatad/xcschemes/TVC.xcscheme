@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
                BuildableName = "TVC.app"
-               BlueprintName = "TVC"
-               ReferencedContainer = "container:TVC.xcodeproj">
+               BlueprintName = "ShutterBug"
+               ReferencedContainer = "container:ShutterBug.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A93F40B193CB299005D9E95"
                BuildableName = "TVCTests.xctest"
-               BlueprintName = "TVCTests"
-               ReferencedContainer = "container:TVC.xcodeproj">
+               BlueprintName = "ShutterBugTests"
+               ReferencedContainer = "container:ShutterBug.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
             BuildableName = "TVC.app"
-            BlueprintName = "TVC"
-            ReferencedContainer = "container:TVC.xcodeproj">
+            BlueprintName = "ShutterBug"
+            ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
             BuildableName = "TVC.app"
-            BlueprintName = "TVC"
-            ReferencedContainer = "container:TVC.xcodeproj">
+            BlueprintName = "ShutterBug"
+            ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
             BuildableName = "TVC.app"
-            BlueprintName = "TVC"
-            ReferencedContainer = "container:TVC.xcodeproj">
+            BlueprintName = "ShutterBug"
+            ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

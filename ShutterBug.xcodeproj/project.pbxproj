@@ -22,6 +22,9 @@
 		0A93F410193CB299005D9E95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3EF193CB299005D9E95 /* UIKit.framework */; };
 		0A93F418193CB299005D9E95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A93F416193CB299005D9E95 /* InfoPlist.strings */; };
 		0A93F41A193CB299005D9E95 /* TVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F419193CB299005D9E95 /* TVCTests.m */; };
+		0A93F425193CB31B005D9E95 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F424193CB31B005D9E95 /* MyTableViewController.m */; };
+		0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */; };
+		0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A93F3E8193CB299005D9E95 /* TVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A93F3E8193CB299005D9E95 /* ShutterBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShutterBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A93F3EB193CB299005D9E95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A93F3ED193CB299005D9E95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0A93F3EF193CB299005D9E95 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0A93F3F3193CB299005D9E95 /* TVC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TVC-Info.plist"; sourceTree = "<group>"; };
+		0A93F3F3193CB299005D9E95 /* ShutterBug-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShutterBug-Info.plist"; sourceTree = "<group>"; };
 		0A93F3F5193CB299005D9E95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A93F3F7193CB299005D9E95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A93F3F9193CB299005D9E95 /* TVC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TVC-Prefix.pch"; sourceTree = "<group>"; };
+		0A93F3F9193CB299005D9E95 /* ShutterBug-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShutterBug-Prefix.pch"; sourceTree = "<group>"; };
 		0A93F3FA193CB299005D9E95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A93F3FB193CB299005D9E95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A93F3FE193CB299005D9E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -50,11 +53,18 @@
 		0A93F403193CB299005D9E95 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0A93F404193CB299005D9E95 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0A93F406193CB299005D9E95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0A93F40C193CB299005D9E95 /* TVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A93F40C193CB299005D9E95 /* ShutterBugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShutterBugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A93F40D193CB299005D9E95 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0A93F415193CB299005D9E95 /* TVCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TVCTests-Info.plist"; sourceTree = "<group>"; };
+		0A93F415193CB299005D9E95 /* ShutterBugTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShutterBugTests-Info.plist"; sourceTree = "<group>"; };
 		0A93F417193CB299005D9E95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A93F419193CB299005D9E95 /* TVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVCTests.m; sourceTree = "<group>"; };
+		0A93F423193CB31B005D9E95 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		0A93F424193CB31B005D9E95 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustPostedFlickerPhotosTVC.h; sourceTree = "<group>"; };
+		0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustPostedFlickerPhotosTVC.m; sourceTree = "<group>"; };
+		0A93F42A193CC8DE005D9E95 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		0A93F42B193CC8DE005D9E95 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,8 @@
 		0A93F3E9193CB299005D9E95 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A93F3E8193CB299005D9E95 /* TVC.app */,
-				0A93F40C193CB299005D9E95 /* TVCTests.xctest */,
+				0A93F3E8193CB299005D9E95 /* ShutterBug.app */,
+				0A93F40C193CB299005D9E95 /* ShutterBugTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +127,11 @@
 				0A93F3FA193CB299005D9E95 /* AppDelegate.h */,
 				0A93F3FB193CB299005D9E95 /* AppDelegate.m */,
 				0A93F3FD193CB299005D9E95 /* Main_iPhone.storyboard */,
+				0A93F429193CC8DE005D9E95 /* Flickr Fetcher */,
+				0A93F423193CB31B005D9E95 /* MyTableViewController.h */,
+				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
+				0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */,
+				0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */,
 				0A93F400193CB299005D9E95 /* Main_iPad.storyboard */,
 				0A93F403193CB299005D9E95 /* ViewController.h */,
 				0A93F404193CB299005D9E95 /* ViewController.m */,
@@ -129,10 +144,10 @@
 		0A93F3F2193CB299005D9E95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A93F3F3193CB299005D9E95 /* TVC-Info.plist */,
+				0A93F3F3193CB299005D9E95 /* ShutterBug-Info.plist */,
 				0A93F3F4193CB299005D9E95 /* InfoPlist.strings */,
 				0A93F3F7193CB299005D9E95 /* main.m */,
-				0A93F3F9193CB299005D9E95 /* TVC-Prefix.pch */,
+				0A93F3F9193CB299005D9E95 /* ShutterBug-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,18 +164,28 @@
 		0A93F414193CB299005D9E95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A93F415193CB299005D9E95 /* TVCTests-Info.plist */,
+				0A93F415193CB299005D9E95 /* ShutterBugTests-Info.plist */,
 				0A93F416193CB299005D9E95 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0A93F429193CC8DE005D9E95 /* Flickr Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				0A93F42A193CC8DE005D9E95 /* FlickrAPIKey.h */,
+				0A93F42B193CC8DE005D9E95 /* FlickrFetcher.h */,
+				0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */,
+			);
+			path = "Flickr Fetcher";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A93F3E7193CB299005D9E95 /* TVC */ = {
+		0A93F3E7193CB299005D9E95 /* ShutterBug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A93F41D193CB299005D9E95 /* Build configuration list for PBXNativeTarget "TVC" */;
+			buildConfigurationList = 0A93F41D193CB299005D9E95 /* Build configuration list for PBXNativeTarget "ShutterBug" */;
 			buildPhases = (
 				0A93F3E4193CB299005D9E95 /* Sources */,
 				0A93F3E5193CB299005D9E95 /* Frameworks */,
@@ -170,14 +195,14 @@
 			);
 			dependencies = (
 			);
-			name = TVC;
+			name = ShutterBug;
 			productName = TVC;
-			productReference = 0A93F3E8193CB299005D9E95 /* TVC.app */;
+			productReference = 0A93F3E8193CB299005D9E95 /* ShutterBug.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0A93F40B193CB299005D9E95 /* TVCTests */ = {
+		0A93F40B193CB299005D9E95 /* ShutterBugTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A93F420193CB299005D9E95 /* Build configuration list for PBXNativeTarget "TVCTests" */;
+			buildConfigurationList = 0A93F420193CB299005D9E95 /* Build configuration list for PBXNativeTarget "ShutterBugTests" */;
 			buildPhases = (
 				0A93F408193CB299005D9E95 /* Sources */,
 				0A93F409193CB299005D9E95 /* Frameworks */,
@@ -188,9 +213,9 @@
 			dependencies = (
 				0A93F412193CB299005D9E95 /* PBXTargetDependency */,
 			);
-			name = TVCTests;
+			name = ShutterBugTests;
 			productName = TVCTests;
-			productReference = 0A93F40C193CB299005D9E95 /* TVCTests.xctest */;
+			productReference = 0A93F40C193CB299005D9E95 /* ShutterBugTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0A93F3E3193CB299005D9E95 /* Build configuration list for PBXProject "TVC" */;
+			buildConfigurationList = 0A93F3E3193CB299005D9E95 /* Build configuration list for PBXProject "ShutterBug" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -220,8 +245,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A93F3E7193CB299005D9E95 /* TVC */,
-				0A93F40B193CB299005D9E95 /* TVCTests */,
+				0A93F3E7193CB299005D9E95 /* ShutterBug */,
+				0A93F40B193CB299005D9E95 /* ShutterBugTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +281,9 @@
 				0A93F405193CB299005D9E95 /* ViewController.m in Sources */,
 				0A93F3FC193CB299005D9E95 /* AppDelegate.m in Sources */,
 				0A93F3F8193CB299005D9E95 /* main.m in Sources */,
+				0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */,
+				0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */,
+				0A93F425193CB31B005D9E95 /* MyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +300,7 @@
 /* Begin PBXTargetDependency section */
 		0A93F412193CB299005D9E95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A93F3E7193CB299005D9E95 /* TVC */;
+			target = 0A93F3E7193CB299005D9E95 /* ShutterBug */;
 			targetProxy = 0A93F411193CB299005D9E95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -391,9 +419,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TVC/TVC-Prefix.pch";
-				INFOPLIST_FILE = "TVC/TVC-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TVC/ShutterBug-Prefix.pch";
+				INFOPLIST_FILE = "TVC/ShutterBug-Info.plist";
+				PRODUCT_NAME = ShutterBug;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -404,9 +432,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TVC/TVC-Prefix.pch";
-				INFOPLIST_FILE = "TVC/TVC-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TVC/ShutterBug-Prefix.pch";
+				INFOPLIST_FILE = "TVC/ShutterBug-Info.plist";
+				PRODUCT_NAME = ShutterBug;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -426,8 +454,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "TVCTests/TVCTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TVCTests/ShutterBugTests-Info.plist";
+				PRODUCT_NAME = ShutterBugTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -444,8 +472,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TVC/TVC-Prefix.pch";
-				INFOPLIST_FILE = "TVCTests/TVCTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TVCTests/ShutterBugTests-Info.plist";
+				PRODUCT_NAME = ShutterBugTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -454,7 +482,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A93F3E3193CB299005D9E95 /* Build configuration list for PBXProject "TVC" */ = {
+		0A93F3E3193CB299005D9E95 /* Build configuration list for PBXProject "ShutterBug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A93F41B193CB299005D9E95 /* Debug */,
@@ -463,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A93F41D193CB299005D9E95 /* Build configuration list for PBXNativeTarget "TVC" */ = {
+		0A93F41D193CB299005D9E95 /* Build configuration list for PBXNativeTarget "ShutterBug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A93F41E193CB299005D9E95 /* Debug */,
@@ -471,7 +499,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		0A93F420193CB299005D9E95 /* Build configuration list for PBXNativeTarget "TVCTests" */ = {
+		0A93F420193CB299005D9E95 /* Build configuration list for PBXNativeTarget "ShutterBugTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A93F421193CB299005D9E95 /* Debug */,
