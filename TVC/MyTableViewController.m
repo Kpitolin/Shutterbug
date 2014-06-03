@@ -51,10 +51,14 @@
 #pragma mark - UITAbleViewDelegate
 
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
-    
+    if ( [detail isKindOfClass:[UINavigationController class]] ){
+        detail = [((UINavigationController *)detail).viewControllers firstObject];
+        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+
+    }
     if ([detail isKindOfClass:[ImageViewController class]])
     {
         [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];

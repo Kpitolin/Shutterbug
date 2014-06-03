@@ -11,7 +11,7 @@
                     <toolbarItems/>
                     <connections>
                         <segue destination="qhn-mk-icW" kind="relationship" relationship="masterViewController" id="sbp-f3-mNA"/>
-                        <segue destination="ZoJ-4B-yfv" kind="relationship" relationship="detailViewController" id="yc2-xN-Fwc"/>
+                        <segue destination="bij-jb-Q19" kind="relationship" relationship="detailViewController" id="yc2-xN-Fwc"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuE-QC-DhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,6 +42,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ShutterBug" id="372-ui-iwZ"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jb6-eO-APc">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="fetchPhotos" destination="t8d-nq-NGK" eventType="valueChanged" id="G7G-9g-uNB"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fS-SA-diC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,10 +69,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C0f-lp-mhP">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C0f-lp-mhP">
                                         <rect key="frame" x="366" y="493" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="color" red="0.30407190701149189" green="0.61553995681471596" blue="0.85084069293478259" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </scrollView>
@@ -87,12 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWm-kl-m4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="627"/>
+            <point key="canvasLocation" x="3127" y="627"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Retour-->
         <scene sceneID="S3h-dT-Gdd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qhn-mk-icW" sceneMemberID="viewController">
+                <navigationController title="Retour" automaticallyAdjustsScrollViewInsets="NO" id="qhn-mk-icW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhO-RW-D3d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -106,6 +112,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uta-Vd-0Ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="-1101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nf1-y9-qk4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bij-jb-Q19" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQW-8U-Tcu">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZoJ-4B-yfv" kind="relationship" relationship="rootViewController" id="IhT-7N-0tX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3y-xB-f3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="627"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
