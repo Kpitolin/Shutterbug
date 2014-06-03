@@ -130,6 +130,7 @@
 				0A93F3FA193CB299005D9E95 /* AppDelegate.h */,
 				0A93F3FB193CB299005D9E95 /* AppDelegate.m */,
 				0A93F3FD193CB299005D9E95 /* Main_iPhone.storyboard */,
+				0A93F400193CB299005D9E95 /* Main_iPad.storyboard */,
 				0A875595193DB6640012B340 /* ImageViewController.h */,
 				0A875596193DB6640012B340 /* ImageViewController.m */,
 				0A93F429193CC8DE005D9E95 /* Flickr Fetcher */,
@@ -137,7 +138,6 @@
 				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
 				0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */,
 				0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */,
-				0A93F400193CB299005D9E95 /* Main_iPad.storyboard */,
 				0A93F403193CB299005D9E95 /* ViewController.h */,
 				0A93F404193CB299005D9E95 /* ViewController.m */,
 				0A93F406193CB299005D9E95 /* Images.xcassets */,
@@ -232,6 +232,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___kevinPitolin___";
 				TargetAttributes = {
+					0A93F3E7193CB299005D9E95 = {
+						DevelopmentTeam = 87MBRGVD5R;
+					};
 					0A93F40B193CB299005D9E95 = {
 						TestTargetID = 0A93F3E7193CB299005D9E95;
 					};
@@ -424,10 +427,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TVC/ShutterBug-Prefix.pch";
 				INFOPLIST_FILE = "TVC/ShutterBug-Info.plist";
 				PRODUCT_NAME = ShutterBug;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,10 +443,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TVC/ShutterBug-Prefix.pch";
 				INFOPLIST_FILE = "TVC/ShutterBug-Info.plist";
 				PRODUCT_NAME = ShutterBug;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

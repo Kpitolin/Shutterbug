@@ -46,6 +46,23 @@
     return cell;
 }
 
+
+
+#pragma mark - UITAbleViewDelegate
+
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
+    
+    if ([detail isKindOfClass:[ImageViewController class]])
+    {
+        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+    }
+    
+}
+
+
 #pragma mark - Navigation
 
 
@@ -54,7 +71,7 @@
 {
     
     
-    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatOriginal];
+    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
     ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
 
 }
@@ -73,8 +90,7 @@
             if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
                 if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
                     
-                    ImageViewController *ivc = (ImageViewController *)segue.destinationViewController;
-                    [self prepareImageViewController:ivc toDisplayPhoto:self.photos [indexPath.row]];
+                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
                 }
                 
             }
