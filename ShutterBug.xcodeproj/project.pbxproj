@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A875597193DB6640012B340 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A875596193DB6640012B340 /* ImageViewController.m */; };
 		0A93F3EC193CB299005D9E95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3EB193CB299005D9E95 /* Foundation.framework */; };
 		0A93F3EE193CB299005D9E95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3ED193CB299005D9E95 /* CoreGraphics.framework */; };
 		0A93F3F0193CB299005D9E95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3EF193CB299005D9E95 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A875595193DB6640012B340 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		0A875596193DB6640012B340 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0A93F3E8193CB299005D9E95 /* ShutterBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShutterBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A93F3EB193CB299005D9E95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A93F3ED193CB299005D9E95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				0A93F3FA193CB299005D9E95 /* AppDelegate.h */,
 				0A93F3FB193CB299005D9E95 /* AppDelegate.m */,
 				0A93F3FD193CB299005D9E95 /* Main_iPhone.storyboard */,
+				0A875595193DB6640012B340 /* ImageViewController.h */,
+				0A875596193DB6640012B340 /* ImageViewController.m */,
 				0A93F429193CC8DE005D9E95 /* Flickr Fetcher */,
 				0A93F423193CB31B005D9E95 /* MyTableViewController.h */,
 				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
@@ -283,6 +288,7 @@
 				0A93F3F8193CB299005D9E95 /* main.m in Sources */,
 				0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */,
 				0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */,
+				0A875597193DB6640012B340 /* ImageViewController.m in Sources */,
 				0A93F425193CB31B005D9E95 /* MyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +504,7 @@
 				0A93F41F193CB299005D9E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A93F420193CB299005D9E95 /* Build configuration list for PBXNativeTarget "ShutterBugTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				0A93F422193CB299005D9E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

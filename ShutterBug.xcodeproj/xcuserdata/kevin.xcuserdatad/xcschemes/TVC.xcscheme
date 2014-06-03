@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
-               BuildableName = "TVC.app"
+               BuildableName = "ShutterBug.app"
                BlueprintName = "ShutterBug"
                ReferencedContainer = "container:ShutterBug.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A93F40B193CB299005D9E95"
-               BuildableName = "TVCTests.xctest"
+               BuildableName = "ShutterBugTests.xctest"
                BlueprintName = "ShutterBugTests"
                ReferencedContainer = "container:ShutterBug.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
-            BuildableName = "TVC.app"
+            BuildableName = "ShutterBug.app"
             BlueprintName = "ShutterBug"
             ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
-            BuildableName = "TVC.app"
+            BuildableName = "ShutterBug.app"
             BlueprintName = "ShutterBug"
             ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A93F3E7193CB299005D9E95"
-            BuildableName = "TVC.app"
+            BuildableName = "ShutterBug.app"
             BlueprintName = "ShutterBug"
             ReferencedContainer = "container:ShutterBug.xcodeproj">
          </BuildableReference>
