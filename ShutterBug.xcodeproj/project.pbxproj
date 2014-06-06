@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A10126C1941B8C600A066B4 /* TopPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A10126B1941B8C600A066B4 /* TopPlacesTVC.m */; };
 		0A875597193DB6640012B340 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A875596193DB6640012B340 /* ImageViewController.m */; };
 		0A93F3EC193CB299005D9E95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3EB193CB299005D9E95 /* Foundation.framework */; };
 		0A93F3EE193CB299005D9E95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A93F3ED193CB299005D9E95 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A10126A1941B8C600A066B4 /* TopPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopPlacesTVC.h; path = "Flickr Fetcher/TopPlacesTVC.h"; sourceTree = "<group>"; };
+		0A10126B1941B8C600A066B4 /* TopPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopPlacesTVC.m; path = "Flickr Fetcher/TopPlacesTVC.m"; sourceTree = "<group>"; };
 		0A875595193DB6640012B340 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		0A875596193DB6640012B340 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0A93F3E8193CB299005D9E95 /* ShutterBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShutterBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9388D81940CCB10068F407 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A93F3FD193CB299005D9E95 /* Main_iPhone.storyboard */,
+				0A93F400193CB299005D9E95 /* Main_iPad.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0A9388D91940CCBF0068F407 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A875595193DB6640012B340 /* ImageViewController.h */,
+				0A875596193DB6640012B340 /* ImageViewController.m */,
+				0A93F423193CB31B005D9E95 /* MyTableViewController.h */,
+				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
+				0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */,
+				0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */,
+				0A10126A1941B8C600A066B4 /* TopPlacesTVC.h */,
+				0A10126B1941B8C600A066B4 /* TopPlacesTVC.m */,
+				0A93F403193CB299005D9E95 /* ViewController.h */,
+				0A93F404193CB299005D9E95 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0A93F3DF193CB299005D9E95 = {
 			isa = PBXGroup;
 			children = (
@@ -129,17 +158,9 @@
 			children = (
 				0A93F3FA193CB299005D9E95 /* AppDelegate.h */,
 				0A93F3FB193CB299005D9E95 /* AppDelegate.m */,
-				0A93F3FD193CB299005D9E95 /* Main_iPhone.storyboard */,
-				0A93F400193CB299005D9E95 /* Main_iPad.storyboard */,
-				0A875595193DB6640012B340 /* ImageViewController.h */,
-				0A875596193DB6640012B340 /* ImageViewController.m */,
+				0A9388D81940CCB10068F407 /* View */,
+				0A9388D91940CCBF0068F407 /* Controller */,
 				0A93F429193CC8DE005D9E95 /* Flickr Fetcher */,
-				0A93F423193CB31B005D9E95 /* MyTableViewController.h */,
-				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
-				0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */,
-				0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */,
-				0A93F403193CB299005D9E95 /* ViewController.h */,
-				0A93F404193CB299005D9E95 /* ViewController.m */,
 				0A93F406193CB299005D9E95 /* Images.xcassets */,
 				0A93F3F2193CB299005D9E95 /* Supporting Files */,
 			);
@@ -287,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A93F405193CB299005D9E95 /* ViewController.m in Sources */,
+				0A10126C1941B8C600A066B4 /* TopPlacesTVC.m in Sources */,
 				0A93F3FC193CB299005D9E95 /* AppDelegate.m in Sources */,
 				0A93F3F8193CB299005D9E95 /* main.m in Sources */,
 				0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */,

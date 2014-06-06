@@ -10,5 +10,5 @@
 
 @interface MyTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray * photos; // of Flickr photo Dictionnary
-
+@property (nonatomic, strong) NSArray * places;
 @end

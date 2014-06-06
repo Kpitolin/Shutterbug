@@ -1,27 +1,29 @@
 //
-//  JustPostedFlickerPhotosTVC.m
+//  TopPlacesTVC.m
 //  ShutterBug
 //
-//  Created by Kevin on 02/06/2014.
+//  Created by Kevin on 06/06/2014.
 //  Copyright (c) 2014 ___kevinPitolin___. All rights reserved.
 //
 
-#import "JustPostedFlickerPhotosTVC.h"
+#import "TopPlacesTVC.h"
 #import "FlickrFetcher.h"
 
+@interface TopPlacesTVC ()
 
-@implementation JustPostedFlickerPhotosTVC
+@end
 
+@implementation TopPlacesTVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchPhotos];
-
+    [self fetchPlaces];
+    
 }
 
 
--(IBAction)fetchPhotos{
+-(IBAction)fetchPlaces{
     
     [self.refreshControl beginRefreshing];
     NSURL * url = [FlickrFetcher URLforTopPlaces];
@@ -29,20 +31,33 @@
     dispatch_async(fetchQueue, ^{
         NSData * jsonResults = [NSData dataWithContentsOfURL: url];
         NSDictionary * propertyListResults =  [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL]; // Transform the JSON data into a dictionnary
-        NSArray *photos = [ propertyListResults valueForKeyPath:FLICKR_RESULTS_PHOTOS];
+        NSArray *places = [propertyListResults valueForKeyPath:@"places.place"]; // I only take the places from Flickr
+        
+        
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.refreshControl endRefreshing]; // We finished the download here so the refresh thing could end
-
-            self.photos = photos;}); // We go back to the main thread because it's a UI thing
-
+            
+            self.places = places;}); // We go back to the main thread because it's a UI thing
+        
     });
     
     
-
+    
     
 }
 
+/*
+#pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

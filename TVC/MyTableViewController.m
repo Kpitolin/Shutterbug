@@ -20,6 +20,13 @@
     [self.tableView reloadData];
 }
 
+
+- (void )setPlaces:(NSArray *)places
+{
+    _places = places;
+    [self.tableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -32,7 +39,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [ self.photos count];
+    return [ self.places count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -40,9 +47,18 @@
     
     static NSString *CellIdentifier = @"Flickr Photo Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSDictionary * photo = self.photos[indexPath.row];
+    
+    // georeferenced photos
+    /*NSDictionary * photo = self.photos[indexPath.row];
     cell.textLabel.text = [photo valueForKey:FLICKR_PHOTO_TITLE];
-    cell.detailTextLabel.text = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];
+    cell.detailTextLabel.text = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];*/
+    
+    
+    NSDictionary * places = self.places[indexPath.row];
+    cell.textLabel.text = [places valueForKey:FLICKR_PLACE_NAME];
+    //cell.detailTextLabel.text = [places valueForKey:FLICKR_PHOTO_DESCRIPTION];
+    
+    
     return cell;
 }
 
