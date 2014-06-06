@@ -7,7 +7,7 @@
 //
 
 #import "TopPlacesTVC.h"
-#import "FlickrFetcher.h"
+#import "FlickerFetcherTopPlacesHelper.h"
 
 @interface TopPlacesTVC ()
 
@@ -26,28 +26,22 @@
 -(IBAction)fetchPlaces{
     
     [self.refreshControl beginRefreshing];
-    NSURL * url = [FlickrFetcher URLforTopPlaces];
-    dispatch_queue_t fetchQueue = dispatch_queue_create("flickr fetcher", NULL);
-    dispatch_async(fetchQueue, ^{
-        NSData * jsonResults = [NSData dataWithContentsOfURL: url];
-        NSDictionary * propertyListResults =  [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL]; // Transform the JSON data into a dictionnary
-        NSArray *places = [propertyListResults valueForKeyPath:@"places.place"]; // I only take the places from Flickr
-        
-        
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.refreshControl endRefreshing]; // We finished the download here so the refresh thing could end
-            
-            self.places = places;}); // We go back to the main thread because it's a UI thing
-        
-    });
-    
+    [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated:YES];
+
+    [FlickerFetcherTopPlacesHelper loadTopPlacesOnCompletion:^(NSArray *places, NSError *error) {
+        if (!error) {
+            self.places = places;
+            [self.refreshControl endRefreshing];
+        } else {
+            NSLog(@"Error loading TopPlaces: %@", error);
+        }
+    }];
     
     
     
 }
+
+
 
 /*
 #pragma mark - Navigation
