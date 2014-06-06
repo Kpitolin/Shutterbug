@@ -23,11 +23,13 @@
 
 - (void)setPlaces:(NSArray *)places
 {
-    if (_places == places) return;
-    _places = [FlickerFetcherTopPlacesHelper sortPlaces:places];
-    self.placesByCountry = [FlickerFetcherTopPlacesHelper placesByCountries:_places];
-    self.countries = [FlickerFetcherTopPlacesHelper countriesFromPlacesByCountry:self.placesByCountry];
-    [self.tableView reloadData];
+    if (_places != places) {
+        _places = [FlickerFetcherTopPlacesHelper sortPlaces:places];
+        self.placesByCountry = [FlickerFetcherTopPlacesHelper placesByCountries:_places];
+        self.countries = [FlickerFetcherTopPlacesHelper countriesFromPlacesByCountry:self.placesByCountry];
+        [self.tableView reloadData];
+    }
+   
 }
 
 #pragma mark - UITableViewDataSource
@@ -56,17 +58,12 @@ titleForHeaderInSection:(NSInteger)section
     
     static NSString *CellIdentifier = @"Flickr Photo Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
-    
-    
-    NSDictionary *place = self.placesByCountry[self.countries[indexPath.section]][indexPath.row]; // we find the section then the place of the place in the array of place of this country
+    NSDictionary *place = self.placesByCountry[self.countries[indexPath.section]][indexPath.row];
+    // we find the section then the place of the place in the array of place of this country
     cell.textLabel.text = [FlickerFetcherTopPlacesHelper titleOfPlace:place];
     cell.detailTextLabel.text = [FlickerFetcherTopPlacesHelper subtitleOfPlace:place];
 
-    
-    
-    return cell;
+        return cell;
 }
 
 

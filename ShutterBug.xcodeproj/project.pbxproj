@@ -28,6 +28,7 @@
 		0A93F425193CB31B005D9E95 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F424193CB31B005D9E95 /* MyTableViewController.m */; };
 		0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */; };
 		0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */; };
+		DE230D3D1942795600115232 /* PlaceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE230D3C1942795600115232 /* PlaceTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		0A93F42A193CC8DE005D9E95 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		0A93F42B193CC8DE005D9E95 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		DE230D3B1942795600115232 /* PlaceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTVC.h; sourceTree = "<group>"; };
+		DE230D3C1942795600115232 /* PlaceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				0A875595193DB6640012B340 /* ImageViewController.h */,
 				0A875596193DB6640012B340 /* ImageViewController.m */,
+				DE230D3B1942795600115232 /* PlaceTVC.h */,
+				DE230D3C1942795600115232 /* PlaceTVC.m */,
 				0A93F423193CB31B005D9E95 /* MyTableViewController.h */,
 				0A93F424193CB31B005D9E95 /* MyTableViewController.m */,
 				0A93F426193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.h */,
@@ -321,6 +326,7 @@
 				0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */,
 				0A875597193DB6640012B340 /* ImageViewController.m in Sources */,
 				0A93F425193CB31B005D9E95 /* MyTableViewController.m in Sources */,
+				DE230D3D1942795600115232 /* PlaceTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

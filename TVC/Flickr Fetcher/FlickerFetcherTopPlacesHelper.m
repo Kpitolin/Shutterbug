@@ -74,7 +74,7 @@
 
 // To sort the places by country
 + (NSDictionary *)placesByCountries:(NSArray *)places{
-    NSMutableDictionary * placesDictionnary;
+    NSMutableDictionary * placesDictionnary = [[NSMutableDictionary alloc] init];
     for (NSDictionary * place in places) {
         
         NSMutableArray* placesOfCountry;

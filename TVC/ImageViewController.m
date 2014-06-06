@@ -38,7 +38,7 @@
 {
     _imageURL = imageURL;
     
-   // self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
+    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
     
     [self startDowloadingImage];
     
