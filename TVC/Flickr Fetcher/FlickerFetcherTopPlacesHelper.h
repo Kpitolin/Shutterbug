@@ -10,6 +10,7 @@
 
 @interface FlickerFetcherTopPlacesHelper : FlickrFetcher
 + (void)loadTopPlacesOnCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler;
++ (void)loadPhotosinPlace:(NSDictionary *) place withMaxResults:(int)results OnCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler;
 + (NSString *)countryOfPlace:(NSDictionary *)place;
 + (NSString *)titleOfPlace:(NSDictionary *)place;
 + (NSString *)subtitleOfPlace:(NSDictionary *)place;

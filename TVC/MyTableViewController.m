@@ -8,6 +8,7 @@
 #import "ImageViewController.h"
 #import "MyTableViewController.h"
 #import "FlickerFetcherTopPlacesHelper.h"
+#import "PlaceTVC.h"
 
 @interface MyTableViewController ()
 @end
@@ -71,34 +72,41 @@ titleForHeaderInSection:(NSInteger)section
 #pragma mark - UITAbleViewDelegate
 
 
--(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
-    if ( [detail isKindOfClass:[UINavigationController class]] ){
-        detail = [((UINavigationController *)detail).viewControllers firstObject];
-        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
-
-    }
-    if ([detail isKindOfClass:[ImageViewController class]])
-    {
-        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
-    }
-    
-}
+//-(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
+//    if ( [detail isKindOfClass:[UINavigationController class]] ){
+//        detail = [((UINavigationController *)detail).viewControllers firstObject];
+//        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+//
+//    }
+//    if ([detail isKindOfClass:[ImageViewController class]])
+//    {
+//        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+//    }
+//    
+//}
 
 
 #pragma mark - Navigation
 
-
-
--(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
+-(void) preparePlaceController:(PlaceTVC *)ptvc toDisplayPlace:(NSDictionary* )place
 {
     
+    ptvc.place = place;
+    ptvc.title = [FlickerFetcherTopPlacesHelper titleOfPlace:place];
     
-    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-    ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
-
 }
+
+//-(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
+//{
+//    
+//    
+//    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+//    ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
+//
+//}
+
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -112,9 +120,9 @@ titleForHeaderInSection:(NSInteger)section
         if (indexPath){
             
             if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
-                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+                if ([segue.destinationViewController isKindOfClass:[PlaceTVC class]]){
                     
-                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+                    [self preparePlaceController:segue.destinationViewController toDisplayPlace:self.placesByCountry[self.countries[indexPath.section]][indexPath.row]];
                 }
                 
             }
@@ -126,6 +134,32 @@ titleForHeaderInSection:(NSInteger)section
     
     
 }
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([sender isKindOfClass:[UITableView class]]){
+//        // Get the new view controller using [segue destinationViewController].
+//        // Pass the selected object to the new view controller.
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        
+//        if (indexPath){
+//            
+//            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
+//                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+//                    
+//                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+//                }
+//                
+//            }
+//            
+//        }
+//        
+//        
+//    }
+//    
+//    
+//}
 
 
 /*

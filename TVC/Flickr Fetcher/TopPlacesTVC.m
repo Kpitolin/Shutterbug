@@ -10,6 +10,7 @@
 #import "FlickerFetcherTopPlacesHelper.h"
 
 @interface TopPlacesTVC ()
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshControl;
 
 @end
 

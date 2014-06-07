@@ -56,7 +56,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="XCR-Bc-Zcg" kind="push" id="QZx-0Y-5ns"/>
+                                    <segue destination="XCR-Bc-Zcg" kind="push" identifier="Display_photo" id="QZx-0Y-5ns"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -110,7 +110,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="4xL-Wy-SMO" kind="push" id="QQy-gH-zAo"/>
+                                    <segue destination="4xL-Wy-SMO" kind="push" identifier="Display_photo" id="QQy-gH-zAo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,10 +196,12 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="3GS-bg-mFK">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
+                            <action selector="fetchPhotos" destination="XCR-Bc-Zcg" eventType="valueChanged" id="SUa-fG-3xI"/>
                             <action selector="fetchPhotos:" destination="XCR-Bc-Zcg" eventType="valueChanged" id="Okl-uX-ZUT"/>
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="refreshItem" destination="3GS-bg-mFK" id="IJG-sD-1FP"/>
                         <outlet property="refreshTool" destination="3GS-bg-mFK" id="KP3-v0-GFo"/>
                     </connections>
                 </tableViewController>
@@ -234,10 +236,12 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mfJ-VL-oEK">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
+                            <action selector="fetchPhotos" destination="4xL-Wy-SMO" eventType="valueChanged" id="zFN-hK-FGo"/>
                             <action selector="fetchPhotos:" destination="4xL-Wy-SMO" eventType="valueChanged" id="f4e-T0-rmb"/>
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="refreshItem" destination="mfJ-VL-oEK" id="iAJ-QL-gQE"/>
                         <outlet property="refreshTool" destination="mfJ-VL-oEK" id="DQN-ak-bPI"/>
                     </connections>
                 </tableViewController>

@@ -56,7 +56,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="m7l-rd-Uia" kind="push" id="JF7-o0-A2h"/>
+                                    <segue destination="m7l-rd-Uia" kind="push" identifier="Display_photo" id="JF7-o0-A2h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,13 +69,16 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="KBw-eV-ggd">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="fetchPlaces" destination="jrM-nO-x7F" eventType="valueChanged" id="gZ2-ie-Jdh"/>
+                            <action selector="fetchPlaces" destination="jrM-nO-x7F" eventType="valueChanged" id="uev-Il-fk8"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="refreshControl" destination="KBw-eV-ggd" id="Qsx-3U-4RD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQm-F4-XS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4059" y="-2590"/>
+            <point key="canvasLocation" x="4083" y="-2627"/>
         </scene>
         <!--PlaceTVC-->
         <scene sceneID="QuK-Zh-BZ7">
@@ -104,10 +107,12 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="duE-KW-nfT">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
+                            <action selector="fetchPhotos" destination="m7l-rd-Uia" eventType="valueChanged" id="b3i-kv-JOG"/>
                             <action selector="fetchPhotos:" destination="m7l-rd-Uia" eventType="valueChanged" id="8Wp-NT-2Z5"/>
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="refreshItem" destination="duE-KW-nfT" id="aDR-wb-eVn"/>
                         <outlet property="refreshTool" destination="duE-KW-nfT" id="QMv-tR-Hdb"/>
                     </connections>
                 </tableViewController>
@@ -148,7 +153,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="I7J-uh-i92" kind="push" id="ics-aG-nlm"/>
+                                    <segue destination="I7J-uh-i92" kind="push" identifier="Display_photo" id="ics-aG-nlm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,13 +166,16 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="j55-Mi-AZd">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="fetchPlaces" destination="4h0-22-mDE" eventType="valueChanged" id="qD8-M5-b9s"/>
+                            <action selector="fetchPlaces" destination="4h0-22-mDE" eventType="valueChanged" id="e0p-Bw-K07"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="refreshControl" destination="j55-Mi-AZd" id="HKd-c6-xbd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQY-0z-Aza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4118" y="-1251"/>
+            <point key="canvasLocation" x="4132" y="-1291"/>
         </scene>
         <!--PlaceTVC-->
         <scene sceneID="G3u-q0-UOn">
@@ -196,16 +204,18 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fZS-kB-tX2">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
+                            <action selector="fetchPhotos" destination="I7J-uh-i92" eventType="valueChanged" id="IN6-vi-NCE"/>
                             <action selector="fetchPhotos:" destination="I7J-uh-i92" eventType="valueChanged" id="mes-qC-Ia3"/>
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="refreshItem" destination="fZS-kB-tX2" id="Dmi-fb-0S6"/>
                         <outlet property="refreshTool" destination="fZS-kB-tX2" id="Wg2-7l-Vw9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbX-Kg-sxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4547" y="-1229"/>
+            <point key="canvasLocation" x="4875" y="-1291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BRG-Z5-9ME">

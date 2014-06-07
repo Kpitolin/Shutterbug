@@ -30,6 +30,24 @@
     [task resume];
 }
 
++ (void)loadPhotosinPlace:(NSDictionary *) place withMaxResults:(int)results OnCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler
+
+{
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:[FlickrFetcher URLforPhotosInPlace:[place valueForKeyPath:FLICKR_PLACE_ID] maxResults:results]
+                                                completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                                                    NSArray *photos;
+                                                    if (!error) {
+                                                        photos = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:location]
+                                                                                                  options:0
+                                                                                                    error:&error] valueForKeyPath:FLICKR_RESULTS_PHOTOS];
+                                                    }
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        completionHandler(photos, error); // when we call this method, we could do what we want in this block (sort by country or whatever)
+                                                    });
+                                                }];
+    [task resume];
+}
 
 + (NSString *)countryOfPlace:(NSDictionary *)place{
 

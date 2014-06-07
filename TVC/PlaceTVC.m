@@ -9,13 +9,23 @@
 #import "PlaceTVC.h"
 
 @interface PlaceTVC ()
-
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshItem;
 @end
 
 @implementation PlaceTVC
 #define MAXOFRESULTS 50
 
-- (IBAction)fetchPhotos:(id)sender {
+- (IBAction)fetchPhotos {
+    [self.refreshItem beginRefreshing];
+    [FlickerFetcherTopPlacesHelper loadPhotosinPlace:self.place withMaxResults:MAXOFRESULTS OnCompletion:^(NSArray *photos, NSError *error){
+        if (!error) {
+            self.photos = photos;  // It will call the super method
+        } else {
+            NSLog(@"Error loading Photos of %@: %@", self.place, error); // replace by Alert
+        
+        }
+    }];
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self fetchPhotos];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,17 +49,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)setPhotos:(NSArray *)photos
-{
-    _photos = photos;
-    
-    [self.tableView reloadData];
 
- //   NSURL * urlPhotos = [FlickerFetcherTopPlacesHelper URLforPhotosInPlace: maxResults:MAXOFRESULTS];
-
-
-    
-}
 
 #pragma mark - Table view data source
 
@@ -70,7 +71,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo" forIndexPath:indexPath];
     
     // Configure the cell...
-    
     
     
     

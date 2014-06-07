@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MyTableViewController.h"
 @interface PlaceTVC : MyTableViewController
+@property (nonatomic, strong) NSDictionary * place;
+
 @end
