@@ -21,14 +21,20 @@
 -(void) setScrollView:(UIScrollView *)scrollView
 {
     _scrollView = scrollView;
-    _scrollView.minimumZoomScale = 0.2;
-    _scrollView.maximumZoomScale = 2.0;
+    //_scrollView.minimumZoomScale = 0.2;
+    //_scrollView.maximumZoomScale = 3.0;
     _scrollView.delegate =  self;
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
  
 }
 
-
+- (void)setZoomScaleToFillScreen
+{
+    double wScale = self.scrollView.bounds.size.width / self.imageView.image.size.width;
+    double hScale = (self.scrollView.bounds.size.height - self.navigationController.navigationBar.frame.size.height - self.tabBarController.tabBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height) / self.imageView.image.size.height;
+    if (wScale > hScale) self.scrollView.zoomScale = wScale;
+    else self.scrollView.zoomScale = hScale;
+}
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageView;
@@ -91,6 +97,8 @@
 
     self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
+    [self setZoomScaleToFillScreen];
+
     [ self.spinner stopAnimating];
 }
 
