@@ -32,7 +32,7 @@
     }
    
 }
-
+/*
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -65,7 +65,7 @@ titleForHeaderInSection:(NSInteger)section
     cell.detailTextLabel.text = [FlickerFetcherTopPlacesHelper subtitleOfPlace:place];
 
         return cell;
-}
+}*/
 
 
 
@@ -87,7 +87,7 @@ titleForHeaderInSection:(NSInteger)section
 //    
 //}
 
-
+/*
 #pragma mark - Navigation
 
 -(void) preparePlaceController:(PlaceTVC *)ptvc toDisplayPlace:(NSDictionary* )place
@@ -96,7 +96,7 @@ titleForHeaderInSection:(NSInteger)section
     ptvc.place = place;
     ptvc.title = [FlickerFetcherTopPlacesHelper titleOfPlace:place];
     
-}
+}*/
 
 //-(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
 //{
@@ -110,30 +110,30 @@ titleForHeaderInSection:(NSInteger)section
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([sender isKindOfClass:[UITableView class]]){
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-        if (indexPath){
-            
-            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
-                if ([segue.destinationViewController isKindOfClass:[PlaceTVC class]]){
-                    
-                    [self preparePlaceController:segue.destinationViewController toDisplayPlace:self.placesByCountry[self.countries[indexPath.section]][indexPath.row]];
-                }
-                
-            }
-            
-        }
-        
-        
-    }
-    
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([sender isKindOfClass:[UITableView class]]){
+//        // Get the new view controller using [segue destinationViewController].
+//        // Pass the selected object to the new view controller.
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        
+//        if (indexPath){
+//            
+//            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
+//                if ([segue.destinationViewController isKindOfClass:[PlaceTVC class]]){
+//                    
+//                    [self preparePlaceController:segue.destinationViewController toDisplayPlace:self.placesByCountry[self.countries[indexPath.section]][indexPath.row]];
+//                }
+//                
+//            }
+//            
+//        }
+//        
+//        
+//    }
+//    
+//    
+//}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

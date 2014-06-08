@@ -197,12 +197,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="fetchPhotos" destination="XCR-Bc-Zcg" eventType="valueChanged" id="SUa-fG-3xI"/>
-                            <action selector="fetchPhotos:" destination="XCR-Bc-Zcg" eventType="valueChanged" id="Okl-uX-ZUT"/>
                         </connections>
                     </refreshControl>
                     <connections>
                         <outlet property="refreshItem" destination="3GS-bg-mFK" id="IJG-sD-1FP"/>
-                        <outlet property="refreshTool" destination="3GS-bg-mFK" id="KP3-v0-GFo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyy-ei-YIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,12 +235,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="fetchPhotos" destination="4xL-Wy-SMO" eventType="valueChanged" id="zFN-hK-FGo"/>
-                            <action selector="fetchPhotos:" destination="4xL-Wy-SMO" eventType="valueChanged" id="f4e-T0-rmb"/>
                         </connections>
                     </refreshControl>
                     <connections>
                         <outlet property="refreshItem" destination="mfJ-VL-oEK" id="iAJ-QL-gQE"/>
-                        <outlet property="refreshTool" destination="mfJ-VL-oEK" id="DQN-ak-bPI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUi-90-4oj" userLabel="First Responder" sceneMemberID="firstResponder"/>

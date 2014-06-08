@@ -9,17 +9,18 @@
 #import "PlaceTVC.h"
 
 @interface PlaceTVC ()
-@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshItem;
 @end
 
 @implementation PlaceTVC
 #define MAXOFRESULTS 50
 
 - (IBAction)fetchPhotos {
-    [self.refreshItem beginRefreshing];
+    [self.refreshControl beginRefreshing];
     [FlickerFetcherTopPlacesHelper loadPhotosinPlace:self.place withMaxResults:MAXOFRESULTS OnCompletion:^(NSArray *photos, NSError *error){
         if (!error) {
             self.photos = photos;  // It will call the super method
+            [self.refreshControl endRefreshing];
+
         } else {
             NSLog(@"Error loading Photos of %@: %@", self.place, error); // replace by Alert
         
@@ -28,14 +29,7 @@
     
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -73,7 +67,9 @@
     // Configure the cell...
     
     
-    
+    NSDictionary *photo = self.photos[indexPath.row];
+    cell.textLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+    cell.detailTextLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
     
     
     

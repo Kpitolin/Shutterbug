@@ -72,9 +72,6 @@
                             <action selector="fetchPlaces" destination="jrM-nO-x7F" eventType="valueChanged" id="uev-Il-fk8"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshControl" destination="KBw-eV-ggd" id="Qsx-3U-4RD"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQm-F4-XS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,12 +86,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" id="KGj-io-vj8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" textLabel="rDJ-qa-4Xh" detailTextLabel="xkc-xK-87o" style="IBUITableViewCellStyleSubtitle" id="KGj-io-vj8">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGj-io-vj8" id="kwA-7X-ahs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rDJ-qa-4Xh">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xkc-xK-87o">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -108,13 +121,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="fetchPhotos" destination="m7l-rd-Uia" eventType="valueChanged" id="b3i-kv-JOG"/>
-                            <action selector="fetchPhotos:" destination="m7l-rd-Uia" eventType="valueChanged" id="8Wp-NT-2Z5"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshItem" destination="duE-KW-nfT" id="aDR-wb-eVn"/>
-                        <outlet property="refreshTool" destination="duE-KW-nfT" id="QMv-tR-Hdb"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWq-Os-N7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,9 +177,6 @@
                             <action selector="fetchPlaces" destination="4h0-22-mDE" eventType="valueChanged" id="e0p-Bw-K07"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshControl" destination="j55-Mi-AZd" id="HKd-c6-xbd"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQY-0z-Aza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,12 +191,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" id="DU6-C7-VfG">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo" textLabel="jGo-Gg-EWP" detailTextLabel="qsU-jw-RTv" style="IBUITableViewCellStyleSubtitle" id="DU6-C7-VfG">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DU6-C7-VfG" id="rt2-Bk-7rs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jGo-Gg-EWP">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qsU-jw-RTv">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -205,13 +226,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="fetchPhotos" destination="I7J-uh-i92" eventType="valueChanged" id="IN6-vi-NCE"/>
-                            <action selector="fetchPhotos:" destination="I7J-uh-i92" eventType="valueChanged" id="mes-qC-Ia3"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshItem" destination="fZS-kB-tX2" id="Dmi-fb-0S6"/>
-                        <outlet property="refreshTool" destination="fZS-kB-tX2" id="Wg2-7l-Vw9"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbX-Kg-sxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
