@@ -218,9 +218,6 @@
                             <action selector="fetchPhotos" destination="XCR-Bc-Zcg" eventType="valueChanged" id="SUa-fG-3xI"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshItem" destination="3GS-bg-mFK" id="IJG-sD-1FP"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyy-ei-YIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,6 +270,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hHd-zo-SmT"/>
+        <segue reference="zK9-it-o4V"/>
     </inferredMetricsTieBreakers>
 </document>

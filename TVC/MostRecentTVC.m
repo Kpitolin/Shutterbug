@@ -21,6 +21,7 @@
 - (IBAction)fetchPhotos {
     [self.refreshControl beginRefreshing];
     self.photos = [self allPhotos];
+    [self.refreshControl endRefreshing];
 
     
 }
@@ -36,7 +37,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self fetchPhotos];
-    [self.refreshControl endRefreshing];
 
 }
 #pragma mark - Table view data source
