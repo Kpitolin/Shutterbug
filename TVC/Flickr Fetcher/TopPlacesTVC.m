@@ -80,7 +80,7 @@ titleForHeaderInSection:(NSInteger)section
     
     ptvc.place = place;
     ptvc.title = [FlickerFetcherTopPlacesHelper titleOfPlace:place];
-    
+
 }
 
 
@@ -93,7 +93,7 @@ titleForHeaderInSection:(NSInteger)section
         
         if (indexPath){
             
-            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
+            if ([segue.identifier isEqualToString:@"Display_place" ]  ) {
                 if ([segue.destinationViewController isKindOfClass:[PlaceTVC class]]){
                     
                     [self preparePlaceController:segue.destinationViewController toDisplayPlace:self.placesByCountry[self.countries[indexPath.section]][indexPath.row]];

@@ -7,6 +7,7 @@
 //
 #import "FlickerFetcherTopPlacesHelper.h"
 #import "PlaceTVC.h"
+#import "ImageViewController.h"
 
 @interface PlaceTVC ()
 @end
@@ -62,14 +63,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Place" forIndexPath:indexPath];
     
     // Configure the cell...
     
     
     NSDictionary *photo = self.photos[indexPath.row];
-    cell.textLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
-    cell.detailTextLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
+    if ([photo valueForKeyPath:FLICKR_PHOTO_TITLE] && [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]){
+        cell.textLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+        cell.detailTextLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
+
+    }else if ( [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]){
+        cell.textLabel.text = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
+        
+    }else{
+        // if the photo have no title nor subtitle
+        cell.textLabel.text = @"Unknown";
+        cell.detailTextLabel.text = @"Unknown";
+    }
     
     
     
@@ -77,17 +88,40 @@
 }
 
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+ //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[UITableViewCell class]]){
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
+        if (indexPath){
+
+            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
+                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+
+                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+                }
+
+            }
+
+        }
+
+
+    }
+
+
 }
-*/
+
+-(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
+{
+
+
+    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    [photo valueForKey:FLICKR_PHOTO_TITLE]? (ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE]) :
+    (ivc.title = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION]);
+
+}
 
 @end

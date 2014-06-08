@@ -29,6 +29,7 @@
 		0A93F428193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */; };
 		0A93F42D193CC8DE005D9E95 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */; };
 		DE230D3D1942795600115232 /* PlaceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE230D3C1942795600115232 /* PlaceTVC.m */; };
+		DE4D69CF19447BD0008143CF /* MostRecentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4D69CE19447BD0008143CF /* MostRecentTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		0A93F42C193CC8DE005D9E95 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		DE230D3B1942795600115232 /* PlaceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTVC.h; sourceTree = "<group>"; };
 		DE230D3C1942795600115232 /* PlaceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTVC.m; sourceTree = "<group>"; };
+		DE4D69CD19447BD0008143CF /* MostRecentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostRecentTVC.h; sourceTree = "<group>"; };
+		DE4D69CE19447BD0008143CF /* MostRecentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				0A93F427193CC3EC005D9E95 /* JustPostedFlickerPhotosTVC.m */,
 				0A10126A1941B8C600A066B4 /* TopPlacesTVC.h */,
 				0A10126B1941B8C600A066B4 /* TopPlacesTVC.m */,
+				DE4D69CD19447BD0008143CF /* MostRecentTVC.h */,
+				DE4D69CE19447BD0008143CF /* MostRecentTVC.m */,
 				0A93F403193CB299005D9E95 /* ViewController.h */,
 				0A93F404193CB299005D9E95 /* ViewController.m */,
 			);
@@ -319,6 +324,7 @@
 			files = (
 				0A93F405193CB299005D9E95 /* ViewController.m in Sources */,
 				0A10126C1941B8C600A066B4 /* TopPlacesTVC.m in Sources */,
+				DE4D69CF19447BD0008143CF /* MostRecentTVC.m in Sources */,
 				0A10126F1941F3C800A066B4 /* FlickerFetcherTopPlacesHelper.m in Sources */,
 				0A93F3FC193CB299005D9E95 /* AppDelegate.m in Sources */,
 				0A93F3F8193CB299005D9E95 /* main.m in Sources */,
