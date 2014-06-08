@@ -88,40 +88,6 @@
 }
 
 
- //In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([sender isKindOfClass:[UITableViewCell class]]){
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
 
-        if (indexPath){
-
-            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
-                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
-
-                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
-                }
-
-            }
-
-        }
-
-
-    }
-
-
-}
-
--(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
-{
-
-
-    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-    [photo valueForKey:FLICKR_PHOTO_TITLE]? (ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE]) :
-    (ivc.title = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION]);
-
-}
 
 @end

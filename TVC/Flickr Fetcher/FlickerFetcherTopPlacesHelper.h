@@ -17,4 +17,6 @@
 + (NSArray *)sortPlaces:(NSArray *)places;
 + (NSDictionary *)placesByCountries:(NSArray *)places;
 + (NSArray *)countriesFromPlacesByCountry:(NSDictionary *)placesByCountry;
++ (NSString *)IDforPhoto:(NSDictionary *)photo;
+
 @end

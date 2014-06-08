@@ -87,25 +87,77 @@ titleForHeaderInSection:(NSInteger)section
 //    
 //}
 
-/*
+#define MAXOFRECENTPHOTOS 20
+
+#define RECENT_PHOTOS_KEY @"Recent_Photos_Key"
++ (NSArray *)allPhotos
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:RECENT_PHOTOS_KEY];
+}
+//For saving the photos in the NSUserDefaults
+- (void)addPhotoInRecentDictionnary:(NSDictionary *)photos_dictionnary{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    //I create an array to put the recent photos in it and I store it in the NSUserDefaults
+    
+    NSMutableArray *photos = [[defaults objectForKey:RECENT_PHOTOS_KEY] mutableCopy];
+    if (!photos) photos = [NSMutableArray array];
+    NSUInteger key = [photos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+     return [[FlickerFetcherTopPlacesHelper IDforPhoto:photos_dictionnary] isEqualToString:[FlickerFetcherTopPlacesHelper IDforPhoto:obj]];
+    }]; // It's a rare way to compare see what's the recent photos, could do that with the system date
+    if (key != NSNotFound) [photos removeObjectAtIndex:key];
+    [photos insertObject:photos_dictionnary atIndex:0];
+    
+    
+    
+    
+    while ([photos count] > MAXOFRECENTPHOTOS) {
+        [photos removeLastObject];
+    }
+    [defaults setObject:photos forKey:RECENT_PHOTOS_KEY];
+    [defaults synchronize];
+}
+
+
 #pragma mark - Navigation
 
--(void) preparePlaceController:(PlaceTVC *)ptvc toDisplayPlace:(NSDictionary* )place
+
+-(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
 {
     
-    ptvc.place = place;
-    ptvc.title = [FlickerFetcherTopPlacesHelper titleOfPlace:place];
     
-}*/
+    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    [photo valueForKey:FLICKR_PHOTO_TITLE]? (ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE]) :
+    (ivc.title = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION]);
+    [self addPhotoInRecentDictionnary:photo];
+    
+    
+}
 
-//-(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
-//{
-//    
-//    
-//    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-//    ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
-//
-//}
+//In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]){
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        if (indexPath){
+            
+            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
+                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+                    
+                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+}
 
 
 
@@ -162,102 +214,26 @@ titleForHeaderInSection:(NSInteger)section
 //}
 
 
-/*
- #pragma mark - UITableViewDataSource
- 
- - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
- {
- 
- // Return the number of sections.
- return [ self.places count];   // It's the default value
- }
- 
- - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
- {
- // Return the number of rows in the section.
- return [ self.places count];
- }
- 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- 
- static NSString *CellIdentifier = @"Flickr Photo Cell";
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
- 
- // georeferenced photos
- NSDictionary * photo = self.photos[indexPath.row];
- cell.textLabel.text = [photo valueForKey:FLICKR_PHOTO_TITLE];
- cell.detailTextLabel.text = [photo valueForKey:FLICKR_PHOTO_DESCRIPTION];
+
+//#pragma mark - UITAbleViewDelegate
+//
+//
+//-(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
+//    if ( [detail isKindOfClass:[UINavigationController class]] ){
+//        detail = [((UINavigationController *)detail).viewControllers firstObject];
+//        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+//        
+//    }
+//    if ([detail isKindOfClass:[ImageViewController class]])
+//    {
+//        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+//    }
+//    
+//}
 
 
-NSDictionary * places = self.places[indexPath.row];
-cell.textLabel.text = [places valueForKey:FLICKR_PLACE_NAME];
-//cell.detailTextLabel.text = [places valueForKey:FLICKR_PHOTO_DESCRIPTION];
-
-
-return cell;
-}
-
-
-
-#pragma mark - UITAbleViewDelegate
-
-
--(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    id detail = self.splitViewController.viewControllers[1]; // on an iPhone this is gonna be nil
-    if ( [detail isKindOfClass:[UINavigationController class]] ){
-        detail = [((UINavigationController *)detail).viewControllers firstObject];
-        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
-        
-    }
-    if ([detail isKindOfClass:[ImageViewController class]])
-    {
-        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
-    }
-    
-}
-
-
-#pragma mark - Navigation
-
-
-
--(void) prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary* )photo
-{
-    
-    
-    ivc.imageURL = [ FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-    ivc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
-    
-}
-
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([sender isKindOfClass:[UITableView class]]){
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-        if (indexPath){
-            
-            if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
-                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
-                    
-                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
-                }
-                
-            }
-            
-        }
-        
-        
-    }
-    
-    
-}*/
 
 
 @end

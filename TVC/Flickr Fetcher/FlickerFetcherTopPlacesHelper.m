@@ -89,7 +89,10 @@
 }
 
 
-
++ (NSString *)IDforPhoto:(NSDictionary *)photo
+{
+    return [photo valueForKeyPath:FLICKR_PHOTO_ID];
+}
 // To sort the places by country
 + (NSDictionary *)placesByCountries:(NSArray *)places{
     NSMutableDictionary * placesDictionnary = [[NSMutableDictionary alloc] init];
@@ -121,4 +124,18 @@
     }];
     return countriesByContry;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

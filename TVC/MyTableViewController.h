@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSArray * places;
 @property (nonatomic, strong) NSArray * countries;
 @property (nonatomic, strong) NSDictionary *placesByCountry;
++ (NSArray *)allPhotos;
 
 @end
