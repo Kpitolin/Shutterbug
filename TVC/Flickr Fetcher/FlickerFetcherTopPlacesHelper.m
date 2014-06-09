@@ -69,8 +69,8 @@
     NSMutableArray * components =  [NSMutableArray arrayWithArray:[[place valueForKeyPath:FLICKR_PLACE_NAME]
                                     componentsSeparatedByString:@", "]];
   
-    NSString * region= components[1];
-    NSString * country = components[2];
+    NSString * region= components[0];
+    NSString * country = components[1];
                              
    return  [NSString stringWithFormat:@"%@ , %@",region,country];
                              
