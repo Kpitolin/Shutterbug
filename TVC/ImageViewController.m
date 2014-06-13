@@ -21,8 +21,8 @@
 -(void) setScrollView:(UIScrollView *)scrollView
 {
     _scrollView = scrollView;
-    //_scrollView.minimumZoomScale = 0.2;
-    //_scrollView.maximumZoomScale = 3.0;
+    _scrollView.minimumZoomScale = 0.2;
+    _scrollView.maximumZoomScale = 3.0;
     _scrollView.delegate =  self;
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
  
@@ -75,6 +75,18 @@
         
     
 }
+- (IBAction)hideBars:(UITapGestureRecognizer *)sender {
+    if ( self.navigationController.navigationBarHidden )
+    {
+        [self.navigationController setNavigationBarHidden:NO];
+
+    }
+    else
+    {
+        [self.navigationController setNavigationBarHidden:YES];
+
+    }
+}
 
 -(UIImageView *) imageView{
     if (!_imageView){
@@ -108,11 +120,13 @@
 }
 
 
+
 #pragma mark - UISPlitViewControllerDelegate
 
 -(void) awakeFromNib
 {
     self.splitViewController.delegate = self;
+
 }
 
 

@@ -146,7 +146,11 @@ titleForHeaderInSection:(NSInteger)section
             if ([segue.identifier isEqualToString:@"Display_photo" ]  ) {
                 if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
                     
+                    dispatch_queue_t load = dispatch_queue_create("load", NULL);
+                    dispatch_async(load, ^{
                     [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+                    });
+                    
                 }
                 
             }
